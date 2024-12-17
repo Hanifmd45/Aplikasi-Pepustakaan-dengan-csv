@@ -1,11 +1,11 @@
 def main_menu():
     while True:
         print('''
-    |-selamat datang di toko buku media -|
+    |-        Welcome to Owl Book       -|
     |                                    |
-    |-----0.keluar dari perpustakaan-----|
+    |-----0.keluar-----------------------|
     |-----1.masuk sebagai admin----------|
-    |-----2.masuk sebagai mahasiswa------|''')
+    |-----2.masuk sebagai Pelanggan------|''')
         
         pilihan_akun = input("\nmasuk sebagai admin/pelanggan? :")#Memasukan Pilihan yang ada didaftar
 
