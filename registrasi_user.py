@@ -1,5 +1,8 @@
 import csv
 import os
+import random
+
+Saldo = random.randint(1000000, 2500000)
 
 def registrasi_user(filename):
     while True:
@@ -11,24 +14,25 @@ def registrasi_user(filename):
         email_user = str(input("Masukan Email: "))
         password_user = str(input("Masukan Password: "))
 
+        data_registrasi = [{
+            'Email': email_user,
+            'Password': password_user,
+            'Saldo': Saldo
+        }]
         with open(filename, mode='r', newline='') as file:
             reader = csv.DictReader(file)
             for item in reader:
-                if item['Email'] == email_user:
-                    print("Username sudah terdaftar!")
-                    return
+                if item['Email'] == email_user:                   
+                    return print("Username sudah terdaftar!")
+                
 
-        # data_registrasi = [{
-        #     'Email': email_user,
-        #     'Password': password_user
-        # }]
+         
+            else:
+                with open(filename,mode="a",newline='') as registrasi:
+                    header = ['Email','Password','Saldo']
+                    writer = csv.DictWriter(registrasi, fieldnames= header)
+                    writer.writerows(data_registrasi)
+                    print("Anda berhasil mendaftarkan Akun")
+                    break
 
-        with open(filename,mode="a",newline='') as registrasi:
-            header = ['Email','Password']
-            writer = csv.DictWriter(registrasi, fieldnames= header)
-            if registrasi.tell() == 0:
-                writer.writerows([email_user,password_user])
-                writer.writerheader()
-            os.system('pause')
-
-registrasi_user('data_pelanggan.csv')
+# registrasi_user('data_pelanggan.csv')

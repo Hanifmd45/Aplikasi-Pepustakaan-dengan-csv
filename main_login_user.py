@@ -1,10 +1,8 @@
+from loginUser import user_login
+from registrasi_user import registrasi_user
 import os
-import csv
-import random
 
-Saldo = random.randint(1000000, 2500000)
-
-def user_login_and_registration(filename):
+def user_login_and_registration():
     while True:
         os.system("cls")
         print("|-------------------------------|")
@@ -17,11 +15,18 @@ def user_login_and_registration(filename):
 
         pilihanku = str(input("Pilih memu: "))
 
-            
+        if pilihanku == "1":
+            user_login('data_pelanggan.csv')
+        elif pilihanku == "2":
+            registrasi_user('data_pelanggan.csv')  
+        elif pilihanku == " ":
+            print("Harap masukan pilihan anda!")
+        else:
+            print("Pilihan anda tidak ada di menu")
+        os.system('pause')
 
 
 
 
 
-
-user_login_and_registration("data_pelanggan.csv")
+user_login_and_registration()

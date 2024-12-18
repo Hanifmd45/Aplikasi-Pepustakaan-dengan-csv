@@ -12,15 +12,13 @@ def user_login(filename):
 
         with open(filename,mode="r") as username:
             reader = csv.DictReader(username)
-            data = list(reader)
 
-            for item in data:
-                if masukan_email in item["Email"] and masukan_password in item["Password"]:
-                    print("Login berhasil")
+            for item in reader:
+                if item["Email"] == masukan_email and item["Password"] == masukan_password:
+                    return print("Login berhasil")                    
                     
-                else:
-                    print("Anda Gagal Login")
-                    break
-                os.system('pause')
-user_login('data_pelanggan.csv')
+                elif item["Email"] != masukan_email and item["Password"] != masukan_password:
+                    print("Anda Gagal Login")  
+                    os.system('pause')
+# user_login('data_pelanggan.csv')
             
