@@ -1,6 +1,11 @@
+import main_login_user as mlu
+import os
+
 def main_menu():
     while True:
+        os.system('cls')
         print('''
+    |------------------------------------|
     |-        Welcome to Owl Book       -|
     |                                    |
     |-----0.keluar-----------------------|
@@ -13,7 +18,7 @@ def main_menu():
         if pilihan_akun == "1":
             print("selamat datang admin")
         elif pilihan_akun == "2":
-            print("selamat datang pelanggan")
+            mlu.user_login_and_registration()
         elif pilihan_akun == "0":
             print("anda telah keluar dari aplikasi")    
             break
