@@ -25,4 +25,4 @@ def main_menu():
         else:
             print("tolong masukan angka sesuai menu yang ada")
             
-main_menu()
+# main_menu()
