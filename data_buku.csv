@@ -2,4 +2,9 @@ Id,Judul,Penulis,Penerbit,Kategori,Stok Barang,Harga
 1,Madilog,Tan Malaka,Narasi,Non-fiksi,3,95000
 2,Sang Alkemis,Paulo Coelho,Gramedia,Fiksi,5,55000
 3,Zarathustra,Friderich Nietzche,Cakrawala,Non-fiksi,2,66500
+<<<<<<< Updated upstream
 4,Petualangan Don Quixote,Miguel de Cervantes Saavedra,Shira Media,Fiksi,4,31000
+=======
+4,Petualangan Don Quixote,Miguel de Cervantes Saavedra,Shira Media,Fiksi,12,5000
+5,Lovely Runner,Nopal,Im sol,Non-Fiksi,9,5000
+>>>>>>> Stashed changes

@@ -35,4 +35,4 @@ def registrasi_user(filename):
                     print("Anda berhasil mendaftarkan Akun")
                     break
 
-# registrasi_user('data_pelanggan.csv')
+registrasi_user('data_pelanggan.csv')
