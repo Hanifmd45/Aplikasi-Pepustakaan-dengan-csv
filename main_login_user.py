@@ -12,6 +12,7 @@ def user_login_and_registration():
         print("|-------------------------------|")
         print("1.Sudah Punya Akun")
         print("2.Belum Punya Akun")
+        print("3.Kembali\n")
 
         pilihanku = str(input("Pilih memu: "))
 
@@ -19,6 +20,8 @@ def user_login_and_registration():
             user_login('data_pelanggan.csv')
         elif pilihanku == "2":
             registrasi_user('data_pelanggan.csv')  
+        elif pilihanku == "3":
+            return
         elif pilihanku == " ":
             print("Harap masukan pilihan anda!")
         else:
@@ -29,4 +32,3 @@ def user_login_and_registration():
 
 
 
-user_login_and_registration()

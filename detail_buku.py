@@ -134,9 +134,8 @@ def detail(filename,item=None):
                         break
 
                 elif input_beli_kerangjang == "2":
-                    print(f"anda telah memasukan {data['Judul']} ke keranjang")
                     keranjang.tambah_buku(item,data)
-                    input("klik enter untuk lanjut")
+                    break
                 elif input_beli_kerangjang == "3":
                     break
                 else:
@@ -187,7 +186,7 @@ def menu_pelanggan(data_user):
             daftar_buku.filter_data_buku()
             detail('data_buku.csv',data_user)
         elif pilihan_user == "3":
-            keranjang.menu_keranjang()
+            keranjang.menu_keranjang(data_user)
         elif pilihan_user == "4":
             os.system('cls')
             lihat_status_pembelian(data_user)    
