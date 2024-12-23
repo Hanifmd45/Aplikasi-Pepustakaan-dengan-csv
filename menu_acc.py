@@ -1,5 +1,25 @@
 import csv
 import os
+import datetime 
+
+def pesanan_ditolak(filename,target_email,pesanan):
+
+    with open(filename, mode='r') as file:
+        reader = csv.DictReader(file)
+        data = list(reader)
+
+        # merubah saldo user setelah membeli buku
+        for item in data:
+            if item['Email'] == target_email:
+                uang_kembalian = int(item['Saldo']) + int(pesanan)
+                item['Saldo'] = str(uang_kembalian)
+
+        with open(filename, mode='w', newline='') as file:
+            fieldnames = ['Email', 'Password', 'Saldo']
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+        
+            writer.writeheader()  
+            writer.writerows(data) 
 
 def lihat_status_pembelian_admin(filename):
     """
@@ -72,11 +92,15 @@ def acc_pesanan(filename):
 
         keputusan = input("Masukkan pilihan (1/2/3): ")
         if keputusan == "1":
+            tgl = datetime.datetime.now()
+            format_tgl = f"{tgl.day}-{tgl.strftime('%B')}-{tgl.year},{tgl.hour}:{tgl.minute}" 
+            reader[nomor - 1]['Timestamp'] = format_tgl
             reader[nomor - 1]['Status'] = "Disetujui"
             print("Pesanan berhasil disetujui.")
         elif keputusan == "2":
             reader[nomor - 1]['Status'] = "Ditolak"
-            print("Pesanan berhasil ditolak.")
+            pesanan_ditolak('data_pelanggan.csv',reader[nomor - 1]['Username'],reader[nomor - 1]['Harga'])
+            print(f"Pesanan {reader[nomor - 1]['Username']} berhasil ditolak")
         elif keputusan == "3":
             print("Tidak ada perubahan pada pesanan.")
         else:
@@ -93,4 +117,3 @@ def acc_pesanan(filename):
 
     input("Tekan Enter untuk kembali.")
 
-# lihat_status_pembelian_admin('status_pembelian.csv')

@@ -2,6 +2,7 @@ import os
 from tambah_dan_hapus import tambah_buku 
 from tambah_dan_hapus import hapus_buku
 from menu_acc import lihat_status_pembelian_admin
+import catatan_keuangan 
 
 def menu_admin():
     while True:
@@ -24,7 +25,7 @@ def menu_admin():
         pilih = input("Pilih Opsi Admin: ")
         
         if pilih == '1':
-            print("Catatan Keuangan")
+            catatan_keuangan.catatan_pemasukan('status_pembelian')
         elif pilih == '2':
             lihat_status_pembelian_admin('status_pembelian.csv')
         elif pilih == '3':
