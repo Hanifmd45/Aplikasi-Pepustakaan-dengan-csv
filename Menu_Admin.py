@@ -1,10 +1,11 @@
 import os
 from tambah_dan_hapus import tambah_buku 
 from tambah_dan_hapus import hapus_buku
-from main_menu import main_menu
+from menu_acc import lihat_status_pembelian_admin
 
 def menu_admin():
     while True:
+        os.system('cls')
         print('''
     |-        Welcome to Owl Book       -|
     |                                    |
@@ -25,18 +26,17 @@ def menu_admin():
         if pilih == '1':
             print("Catatan Keuangan")
         elif pilih == '2':
-            print("Menu ACC")
+            lihat_status_pembelian_admin('status_pembelian.csv')
         elif pilih == '3':
-            tambah_buku('data_buku.csv')
+            tambah_buku()
         elif pilih == '4':
             hapus_buku('data_buku.csv')
         elif pilih == '0':
-            main_menu()
-            break
+            return
         else:
             print("tolong masukan angka sesuai menu yang ada")
             
 
-menu_admin()
+# menu_admin()
             
             

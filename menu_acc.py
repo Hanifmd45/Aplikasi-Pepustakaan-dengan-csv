@@ -93,4 +93,4 @@ def acc_pesanan(filename):
 
     input("Tekan Enter untuk kembali.")
 
-lihat_status_pembelian_admin('status_pembelian.csv')
+# lihat_status_pembelian_admin('status_pembelian.csv')

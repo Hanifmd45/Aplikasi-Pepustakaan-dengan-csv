@@ -1,5 +1,7 @@
 import main_login_user as mlu
 import os
+from loginAdmin import login_admin
+
 
 def main_menu():
     while True:
@@ -16,7 +18,7 @@ def main_menu():
 
         # Kondisi untuk memproses semua fitur
         if pilihan_akun == "1":
-            print("selamat datang admin")
+           login_admin()
         elif pilihan_akun == "2":
             mlu.user_login_and_registration()
         elif pilihan_akun == "0":
@@ -25,4 +27,4 @@ def main_menu():
         else:
             print("tolong masukan angka sesuai menu yang ada")
             
-# main_menu()
+main_menu()

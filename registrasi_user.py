@@ -24,9 +24,6 @@ def registrasi_user(filename):
             for item in reader:
                 if item['Email'] == email_user:                   
                     return print("Username sudah terdaftar!")
-                
-
-         
             else:
                 with open(filename,mode="a",newline='') as registrasi:
                     header = ['Email','Password','Saldo']
@@ -35,4 +32,4 @@ def registrasi_user(filename):
                     print("Anda berhasil mendaftarkan Akun")
                     break
 
-registrasi_user('data_pelanggan.csv')
+# registrasi_user('data_pelanggan.csv')

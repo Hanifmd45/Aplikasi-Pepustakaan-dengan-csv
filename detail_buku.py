@@ -43,7 +43,7 @@ def update_stok_barang(filename, judul_buku):
 
 # sebuah function untuk menambahakan data ke status pembelian 
 # dan dan merubah data saldo dari user bila pembelian berhasil
-def pembayaran(filename, data_buku,target_email):
+def pembayaran(filename, data_buku, target_email):
     sisa_saldo = int(target_email['Saldo']) - int(data_buku['Harga'])
 
     print(f"\nanda telah membeli {data_buku['Judul']}")

@@ -1,6 +1,6 @@
 import csv
 import os
-
+from Menu_Admin import menu_admin
 #Deklarasi variabel user admin dan password admin
 Admin = "Admin122333"
 paswordAdmin = "4dm1n00"
@@ -30,8 +30,8 @@ def login_admin():
         elif masukan_user != Admin and masukan_password == paswordAdmin:
             print("Login gagal User Admin salah!")
         elif masukan_user == Admin and masukan_password == paswordAdmin:
-            print("Login berhasil!")
+            menu_admin()
             break
         os.system("pause")
-login_admin()
+# login_admin()
 
