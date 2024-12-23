@@ -147,8 +147,8 @@ def hapus_buku(filename): #fungsi menghapus buku
 def tambah_buku():
     print("0.Kembali")
     print("1.Tambah buku")
-    print("2.Mengubah Stok")
-    print("3.Mengubah Harga")
+    print("2.Update Stok")
+    print("3.Update Harga")
     pilih = input("Pilih opsi: ")
     
     if pilih == '1':
