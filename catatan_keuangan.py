@@ -2,12 +2,12 @@ import csv
 import os
 
 def catatan_pemasukan(filename):
-    with open('status_pembelian.csv', mode='r') as file:
+    with open(filename, mode='r') as file:
         reader = list(csv.DictReader(file))
 
-        print("=========================")
-        print("--Menu status pemesanan--")
-        print("=========================")
+        print("==========================")
+        print("--Menu catatan keuangan --")
+        print("==========================")
         print("")
         urutan = 0
         for data in reader:
